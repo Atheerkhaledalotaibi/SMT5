@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Control Robot Movement AKU</title>
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            color: black;
+            padding-top: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #forward {
+            float: top;
+            margin-top: 5em;
+        }
+        
+        #right {
+            float: right;
+        }
+        
+        #left {
+            float: left;
+        }
+        
+        #backward {
+            margin-top: 0.5%;
+        }
+        
+        button {
+            float: center;
+            text-align: center;
+            font-size: 14px;
+            width: 80px;
+            height: 40px;
+            background: #efeae9;
+            border: 2px solid #efeae9;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <centet>
+        <button class="forward" onclick="forward()">forward</button><br><br>
+        <button class="right" onclick="right()">right</button>
+        <button class="stop" onclick="stop()">stop</button>
+        <button class="left" onclick="left()">left</button><br><br>
+        <button class="backward" onclick="backward()">backward</button>
+
+    </centet>
+</body>
+<script>
+    function forward() {
+        const Htp = new XMLHttpRequest();
+        Htp.open("GET", "http://localhost/Task5/send.php?x=" + "F")
+        Htp.send();
+    }
+
+    function backward() {
+        const Htp = new XMLHttpRequest();
+        Htp.open("GET", "http://localhost/Task5/send.php?x=" + "B")
+        Htp.send();
+    }
+
+    function left() {
+        const Htp = new XMLHttpRequest();
+        Htp.open("GET", "http://localhost/Task5/send.php?x=" + "L")
+        Htp.send();
+    }
+
+    function stop() {
+        const Htp = new XMLHttpRequest();
+        Htp.open("GET", "http://localhost/Task5/send.php?x=" + "S")
+        Htp.send();
+    }
+
+    function right() {
+        const Htp = new XMLHttpRequest();
+        Htp.open("GET", "http://localhost/Task5/send.php?x=" + "R")
+        Htp.send();
+    }
+</script>
+
+</html>
